@@ -1,0 +1,27 @@
+\chapter*{Introducción} \label{sec:Introduccion}
+%\pdfbookmark[0]{Introducción}{introduccion} % Sets a PDF bookmark for the dedication
+
+\vspace{5 mm}
+
+
+Con el pasar de los años, las empresas evolucionan con el fin de ofrecer a sus clientes mejores productos. Synergy-GB es una compañía que desarrolla gran variedad de aplicaciones web y móviles, teniendo como gran parte de su clientela bancos; habiendo desarrollado, entre otras, las aplicaciones móviles bancarias del Banco Banesco y del Banco Mercantil. El mercado bancario es cada día más exigente y se encuentra en constante necesidad de innovaciones para ser más atractivo a sus clientes y poder ofrecer mejor calidad de servicios. En un inicio se ofrecían servicios de banca común (como la capacidad de consulta de saldos y balances de las cuentas de cada usuario del banco), sin la necesidad de una computadora de escritorio o portátil sino con el simple uso de un dispositivo móvil o Smartphone. Sin embargo, con el paso del tiempo y poco a poco, lo que fue bautizado como banca móvil fue expandiéndose, tomando en cuenta operaciones cada vez más complejas, como la disposición de saldos y movimientos de las tarjetas de crédito. De esta manera se hizo evidente que la mayoría de las operaciones bancarias, que en un principio debían seguir un proceso tedioso directamente en los bancos para poder realizarse, ahora pueden realizarse en el móvil de forma rápida y cómoda.
+
+
+El proyecto de pasantía descrito en el siguiente informe tiene, entre sus propósitos, innovar sobre un tema en particular de la banca móvil: las notificaciones bancarias, dado que es un tema con el cual los bancos ya han experimentado explotar en diversas vías y se vuelve engorroso. Mediante el desarrollo de una aplicación móvil y una aplicación web se ofrece una solución de unificación de norificaciones. El siguiente informe mostrará no solo como se puede ofrecer un buzón digital de notificaciones bancarias, sino la expansión de la comunicación entre un banco y sus clientes, así sean por motivos de seguridad o informativos, que permita al usuario escoger opciones y cominicarse de vuelta con el banco de manera sencilla e inmediata. Todo esto en pro de que el usuario se vea beneficiado con toda esta información disponible de una forma sencilla y fácil, en un solo lugar. De esta manera Synergy-GB podrá ofrecer algo innovador que facilite la vida de su clientela. El objetivo general del proyecto de pasantía, planteado por la empresa y logrado a lo largo de su desarrollo, fue: “Desarrollar la aplicación web y la aplicación móvil multiplataforma en PhoneGap, Ionic Framework y Angular.js para recibir notificaciones y alertas enriquecidas e interactivas”. Para alcanzarlo se plantearon los siguientes objetivos específicos:
+
+
+\begin{itemize}[noitemsep,nolistsep]
+\item Diseñar la arquitectura de la aplicación basándose en la arquitectura de Synergy Push.
+\item Desarrollar la integración con Synergy Push.
+\item Desarrollar el módulo envío de notificaciones.
+\item Desarrollar el módulo de gestión de contenido y respuestas de los usuarios.
+\item Desarrollar la aplicación web tomando en cuenta las mejores prácticas del diseño web 2.0.
+\item Desarrollar la aplicación móvil multiplataforma, tomando en cuenta las mejores prácticas del desarrollo para dispositivos móviles y utilizando la plataforma PhoneGap, ionic, angularjs y nodejs.
+\end{itemize}
+
+
+Este informe presenta los resultados de la investigación, diseño e implementación de \textit{notificaciones Plus}. Se explicarán las diferentes fases del desarrollo del mismo y el proceso de transformación del concepto abstracto inicial en un prototipo funcional, junto con las decisiones de diseño tomadas a lo largo del desarrollo.
+
+
+El informe está organizado de la siguiente manera: en el capítulo 1 se provee una visión general de Synergy-GB para familiarizar al lector con la misma. En el capítulo 2 se presentan algunos conceptos teóricos fundamentales. En el capítulo 3 se describen las herramientas tecnológicas utilizadas en el desarrollo del prototipo. En el capítulo 4 se describe la metodología de Synergy-GB, utilizada en la pasantía.  El capítulo 5 presenta el proceso completo de diseño e implementación del canal Web de Banca. El capítulo 6 señala los retos enfrentados durante el desarrollo. Luego, se exponen las conclusiones y algunas recomendaciones derivadas del proceso de investigación y desarrollo, seguidas de las referencias bibliográficas y el glosario. Finalmente, en los Apéndices se presentan los artefactos que se realizaron a lo largo de este proyecto de pasantía.
+

@@ -1,0 +1,62 @@
+ % Marco Teorico.
+\chapter{Marco Teórico} \label{chap:Marco Teorico}
+
+\vspace{5 mm}
+
+En este capítulo se describen los conceptos estudiados para elaborar el proyecto. Al mismo tiempo, proporciona un conocimiento de la teoría que le da significado a las soluciones encontradas durante el desarrollo del proyecto.
+
+\section{Notificación Push} \label{sect:Notificación Push}
+
+Las Notificaciones Push son mensajes que se envían de forma directa a dispositivos móviles (Smartphones y/o tablets) con sistema operativo iOS, Android, Blackberry o Windows Phone. La recepción por parte de los dispositivos no está garantizada. \cite{MTPUSH}.  
+
+\section{Servicio web} \label{sect:Servicio web}
+
+Los servicios web son un conjunto de protocolos y estándares definidos que sirven para intercambiar datos por medio de comunicaciones remotas en redes como Internet, permitiendo la interoperabilidad entre aplicaciones desarrolladas en distintos lenguajes de programación o ejecutadas en distintas plataformas \cite{MTREST}. 
+
+
+La definición de los servicios web se basa en una serie de especificaciones y estándares aceptados por la mayoría como SOAP (Simple Object Access Protocol), WSDL (Web Services Description Language) y UDDI (Universal Description, Discovery and Integration), basados en XML (Extensible Markup Language). Sin embargo también existen otros protocolos de servicios web como REST (Representational State Transfer, descrito en la sección ~\ref{sect:Transferencia de estado representacional (REST)}) y distintos formatos de intercambio de datos y mensajes adicionales a XML tales como JSON (JavaScript Object Notation) \cite{MTREST}.
+
+\section{Transferencia de Estado Representacional (REST)} \label{sect:Transferencia de estado representacional (REST)}
+
+La Transferencia de Estado Representacional (REST, por sus siglas en inglés), es un estilo arquitectónico para sistemas distribuidos. Los sistemas REST normalmente se basan en el protocolo HTTP para definir todas las operaciones que se pueden realizar. Estas operaciones aplican sobre recursos, los cuales son entidades semánticas que representan un objeto o concepto bien definido dentro del sistema\cite{MTREST}.
+
+Entre los fundamentos de REST se encuentran \cite{MTREST}:
+\begin{itemize}[noitemsep,nolistsep]
+\item Está basado en un protocolo cliente/servidor sin estado.
+\item Posee un conjunto de operaciones bien definidas que se aplican a todos los recursos de información.
+\item Ofrece una sintaxis uniforme para identificar los recursos.
+\end{itemize}
+
+\section{Arquitectura de tres capas} \label{sect:Arquitectura de tres capas}
+La arquitectura de tres capas es una arquitectura cliente/servidor compuesta por la capas de datos, aplicación y presentación \cite{MTATC}.
+La capa de datos es responsable de almacenar, en un servidor de datos dedicado, información de la configuración y datos del negocio. La capa de aplicación, también denominada capa lógica, de negocio o servidor de aplicación, controla toda la funcionalidad, y provee procesos lógicos de negocio y acceso a los datos. La capa de presentación ofrece a los usuarios la lógica de presentación; es decir, el acceso a la información a través de una interfaz de usuario \cite{MTATC2}.
+La utilización de una arquitectura de tres capas en el desarrollo de sistemas, en base a las características previamente expuestas, ofrece las siguientes ventajas:
+\begin{itemize}[noitemsep,nolistsep]
+\item Brinda capacidad de reutilización de código y funcionalidades, especialmente en la capa intermedia o de negocios.
+\item Provee independencia entre capas y un mínimo impacto a la hora de realizar cambios. 
+\item Facilita del mantenimiento y mejora del sistema.
+La arquitectura de tres capas tiene su origen a principio de los años noventa en vista de la necesidad de superar las limitaciones inherentes en una arquitectura de dos capas. La utilización de tres capas establece un diseño efectivo cuando se necesita un esquema de tipo cliente/servidor o de datos distribuidos mediante la provisión de un mejor desempeño, flexibilidad, mantenimiento facilitado, reutilización y escalabilidad \cite{MTATC3}.
+
+\section{Patrón MVC (Modelo-Vista-Controlador)} \label{sect:Patron MVC}
+Antes de proporcionar una definición de Modelo-Vista-Controlador, hay que definir un patrón de diseño. “Los patrones de diseño son el esqueleto de las soluciones a problemas comunes en el desarrollo de software” \cite{MTMVC1}. MVC es un patrón de diseño de software que separa el código fuente en tres capas o componentes con funciones muy especiales \cite{MTMVC2}: 
+\begin{itemize}[noitemsep,nolistsep]
+\item Modelo: administra el comportamiento y los datos del dominio de la aplicación (es decir, maneja la lógica del negocio), responde las solicitudes de información acerca de su estado (provenientes, generalmente, de la vista), mientras que manipula los datos a petición del controlador. 
+\item Controlador: Es la capa que interpreta eventos (usualmente acciones del usuario), informando a la vista y al modelo sobre los cambios necesarios para generar una respuesta. De manera más precisa, el controlador informa al modelo sobre cambios en la información, y a la vista sobre la manera en la que deben presentarse los datos provenientes del modelo. 
+\item Vista: Es la sección encargada de “presentar” el modelo (lógica del negocio). Esta capa se centra en la interacción directa con el usuario del sistema o aplicación. 
+
+\section{Software as a Service} \label{sect:Software as a Service}
+
+SaaS es un modelo de entrega de software en el que el fabricante es responsable de la operación técnica diaria del software proporcionado a los clientes (incluyendo el mantenimiento y soporte), mientras los clientes disfrutan de los beneficios del software desde ubicaciones remotas \cite{MTSAAS}.
+La aparición de SaaS como un mecanismo efectivo de entrega de software crea una oportunidad para los departamentos de Tecnología de la Información (IT por sus siglas en inglés de Information Technology) de cambiar su enfoque de despliegue y soporte de aplicaciones para la gestión de los servicios que ofrecen éstas aplicaciones \cite{MTSAAS2}.
+
+\section{WEB 2.0} \label{sect:WEB 2.0}
+
+La web 2.0 es la revolución de los negocios en la industria de la computación causada por el movimiento de Internet como una plataforma, y un intento por entender las reglas para el éxito de esa plataforma. La principal de esas reglas es la siguiente: construir aplicaciones que aprovechen los efectos de la red para que mejoren a medida que la gente las utiliza \cite{MTWEB2}.
+La web 2.0 generalmente se refiere a un conjunto de patrones sociales, arquitectónicos y de diseño que resultan en la migración masiva de los negocios al Internet como plataforma. Estos patrones se enfocan en los modelos de interacción entre comunidades, personas, computadoras y software. En esencia, las filosofías y tecnologías de la web 2.0, permiten que la interacción, a niveles sin precedentes, ayude a promover la innovación, la velocidad y la sencillez; por ejemplo: aprovechar la inteligencia colectiva de la gente, descubrir y aprovechar las comunidades de interes y conectar a las personas entre si y a la información relevante de manera más eficiente \cite{MTWEB2}.
+
+\section{Single Page Application (SPA)} \label{sect:Single Page Application} 
+
+Una \textit{Single-Page-Application} (o aplicación de una sola página), es una aplicación o sitio web que maneja una sola página web, con el objetivo de proveer una experiencia de uso más fluida al usuario (similar a las aplicaciones de escritorio).
+En una SPA se recupera todo el código necesario para cargar una sola página, o las fuentes necesarias se cargan dinámicamente y se agregan a la página conforme se necesiten. La página no es refrescada nunca, aunque ciertas tecnologías dan la ilusión de que se está navegando en más de una página. Muchas veces interactuar con una SPA involucra comunicarse con servicios web \cite{MTSPA}.
+
+\end{itemize} 

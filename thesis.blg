@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2014/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: ieeetr.bst
+Database file #1: myrefs.bib
+Warning--empty journal in MTPUSH
+Warning--empty journal in MTSAAS2
+You've used 25 entries,
+            1876 wiz_defined-function locations,
+            596 strings with 6351 characters,
+and the built_in function-call counts, 3036 in all, are:
+= -- 266
+> -- 78
+< -- 0
++ -- 42
+- -- 17
+* -- 119
+:= -- 392
+add.period$ -- 29
+call.type$ -- 25
+change.case$ -- 23
+chr.to.int$ -- 0
+cite$ -- 27
+duplicate$ -- 130
+empty$ -- 457
+format.name$ -- 17
+if$ -- 799
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 10
+newline$ -- 82
+num.names$ -- 14
+pop$ -- 147
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 106
+stack$ -- 0
+substring$ -- 0
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 14
+width$ -- 27
+write$ -- 183
+(There were 2 warnings)

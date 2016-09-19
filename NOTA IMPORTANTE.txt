@@ -1,0 +1,6 @@
+Hay que correr por separado 
+
+bibtex thesis.aux
+makeglossaries thesis.glo
+
+En caso de que las citas y referencias salgan con signos de ?

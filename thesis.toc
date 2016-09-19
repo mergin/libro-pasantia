@@ -1,0 +1,68 @@
+\select@language {spanish}
+\contentsline {chapter}{\IeC {\'I}ndice General}{\es@scroman {vii}}{chapter*.2}
+\contentsline {chapter}{\IeC {\'I}ndice de Tablas}{\es@scroman {x}}{chapter*.3}
+\contentsline {chapter}{\IeC {\'I}ndice de Figuras}{\es@scroman {xi}}{chapter*.4}
+\contentsline {chapter}{Lista de S\IeC {\'\i }mbolos y Abreviaturas}{\es@scroman {xii}}{chapter*.6}
+\contentsline {chapter}{Introducci\IeC {\'o}n}{1}{section*.7}
+\contentsline {chapter}{\numberline {1}Entorno Empresarial}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Notificaci\IeC {\'o}n Push}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Servicio web}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Transferencia de Estado Representacional (REST)}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Arquitectura de tres capas}{7}{section.2.4}
+\contentsline {section}{\numberline {2.5}Patr\IeC {\'o}n MVC (Modelo-Vista-Controlador)}{8}{section.2.5}
+\contentsline {section}{\numberline {2.6}Software as a Service}{8}{section.2.6}
+\contentsline {section}{\numberline {2.7}WEB 2.0}{9}{section.2.7}
+\contentsline {section}{\numberline {2.8}Single Page Application (SPA)}{9}{section.2.8}
+\contentsline {chapter}{\numberline {3}Marco Tecnol\IeC {\'o}gico}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}HTML (HyperText Markup Language)}{10}{section.3.1}
+\contentsline {section}{\numberline {3.2}CSS (Cascading Style Sheets)}{10}{section.3.2}
+\contentsline {section}{\numberline {3.3}JavaScript}{10}{section.3.3}
+\contentsline {section}{\numberline {3.4}JSON}{11}{section.3.4}
+\contentsline {section}{\numberline {3.5}Node.js}{11}{section.3.5}
+\contentsline {section}{\numberline {3.6}Grunt}{11}{section.3.6}
+\contentsline {section}{\numberline {3.7}PhoneGap}{11}{section.3.7}
+\contentsline {section}{\numberline {3.8}Cordova}{12}{section.3.8}
+\contentsline {section}{\numberline {3.9}AngularJS}{12}{section.3.9}
+\contentsline {section}{\numberline {3.10}Ionic Framework}{12}{section.3.10}
+\contentsline {chapter}{\numberline {4}Marco Metodol\IeC {\'o}gico}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Metodolog\IeC {\'\i }a de Proyectos Synergy-GB}{13}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Concepci\IeC {\'o}n}{13}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Dise\IeC {\~n}o}{14}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Construcci\IeC {\'o}n}{14}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Transici\IeC {\'o}n}{14}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Scrum}{15}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}El equipo Scrum (Scrum team)}{15}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}El Sprint}{16}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Artefactos}{17}{subsection.4.2.3}
+\contentsline {chapter}{\numberline {5}Desarrollo de la Aplicaci\IeC {\'o}n}{18}{chapter.5}
+\contentsline {section}{\numberline {5.1}Concepci\IeC {\'o}n}{18}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Requerimientos}{19}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Riesgos}{20}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Tecnolog\IeC {\'\i }as y plataformas de desarrollo}{21}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Casos de Uso}{21}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Planificaci\IeC {\'o}n Inicial}{22}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Dise\IeC {\~n}o}{22}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Dise\IeC {\~n}o de la arquitectura}{23}{subsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.1.1}Vista de Escenarios}{23}{subsubsection.5.2.1.1}
+\contentsline {subsubsection}{\numberline {5.2.1.2}Vista L\IeC {\'o}gica}{24}{subsubsection.5.2.1.2}
+\contentsline {subsubsection}{\numberline {5.2.1.3}Vista de Desarrollo}{24}{subsubsection.5.2.1.3}
+\contentsline {subsubsection}{\numberline {5.2.1.4}Vista de Implantaci\IeC {\'o}n}{26}{subsubsection.5.2.1.4}
+\contentsline {subsubsection}{\numberline {5.2.1.5}Vista de Procesos}{27}{subsubsection.5.2.1.5}
+\contentsline {subsubsection}{\numberline {5.2.1.6}Vista de Datos}{27}{subsubsection.5.2.1.6}
+\contentsline {subsection}{\numberline {5.2.2}Planificaci\IeC {\'o}n del desarrollo}{27}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Construcci\IeC {\'o}n}{27}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Iteraci\IeC {\'o}n 1}{29}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Iteraci\IeC {\'o}n 2}{30}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Iteraci\IeC {\'o}n 3}{31}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Iteraci\IeC {\'o}n 4}{32}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Descripci\IeC {\'o}n general del producto}{33}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}Transici\IeC {\'o}n}{38}{section.5.4}
+\contentsline {chapter}{\numberline {6}Retos Enfrentados y Logros Adicionales}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}Retos enfrentados}{39}{section.6.1}
+\contentsline {section}{\numberline {6.2}Logros adicionales}{40}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusiones y Recomendaciones}{42}{chapter.7}
+\contentsline {chapter}{Bibliograf\'{\i }a}{45}{chapter*.27}
+\contentsline {chapter}{\numberline {A}Documento de Arquitectura de Software}{47}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Especificaci\IeC {\'o}n Funcional}{58}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Sprint Backlog}{80}{appendix.Alph3}

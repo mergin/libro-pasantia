@@ -1,0 +1,43 @@
+ % Marco Teorico.
+\chapter{Marco Tecnológico} \label{chap:Marco Tecnologico}
+
+\vspace{5 mm}
+
+En este capítulo se presentan las características principales de las herramientas tecnológicas seleccionadas para el desarrollo del proyecto de pasantía. 
+
+\section{HTML (HyperText Markup Language)} \label{sect:HTML}
+HTML (HyperText Markup Language) es un lenguaje de marcado para describir documentos web mediante etiquetas. Consiste en una serie de etiquetas para definir la estructura de la página y mediante ella se pueden definir, textos imágenes y otros \cite{MTHTML}. 
+
+\section{CSS (Cascading Style Sheets)} \label{sect:CSS}
+CSS (Cascading Style Sheets), define c ́omo mostrar los elementos HTML, permite separar la estructura del documento de su estilo y los detalles propios del formato del mismo. Se pueden definir estos estilos y formatos en el mismo documento HTML o en un documento de formato .css aparte \cite{MTCSS}. 
+
+\section{JavaScript} \label{sect:JavaScript}
+JavaScript es un lenguaje de programación interpretado que permite darle lógica al marcado (HTML) y al estilo (CSS) de las páginas web. Forma parte de las herramientas que tiene un navegador web para poder mostrar una página web dinámica \cite{MTJS}.
+
+\section{JSON} \label{sect:JSON}
+JSON, acrómimo de JavaScript Object Notation, es formato de intercambio de datos liviano basado en un subconjunto del lenguaje de programación JavaScript. Este formato posee dos estructuras básicas: pares nombre/valor y listas ordenadas de valores, por lo cual es entendible con facilidad por los humanos y simple de interpretar o generar para las máquinas. Representa una de las principales alternativas al XML \cite{MTJSON}. 
+
+\section{Node.js} \label{sect:Node}
+Node.js es una plataforma construida sobre V8 JavaScript Runtime, el cuál es el motor de JavaScript de código abierto de Google (V8 JavaScript Engine, 2008), para construir aplicaciones de red escalables. Node.js utiliza un manejador de eventos, un modelo de I/O no bloqueante que lo hace ligero y eficiente, ideal para aplicaciones de tiempo real que manejan gran cantidad de datos y que se ejecutan a través de dispositivos distribuidos \cite{MTNODE}. 
+
+\section{Grunt} \label{sect:Grunt}
+Es un intérprete (y ejecutor) de tareas de JavaScript que se usa para la automatización de tareas repetitivas en el desarrollo de aplicaciones web para que el programador pueda concentrarse en las áreas relevantes del desarrollo. Entre estas tareas se encuentran compilación, minificación y pruebas unitarias \cite{MTGRUNT}.
+
+\section{Yeoman} \label{sect:Yeoman}
+Es una herramienta que permite llevar a cabo el scaffolding de una aplicación desde cero, permitiendo así lograr toda la estructura de directorios y archivos al iniciar una aplicación. Incluso logra construir dicha estructura de los proyectos, considerando las mejores prácticas y estándares de las aplicaciones web modernas \cite{MTYEO}.
+
+\section{PhoneGap} \label{sect:PhoneGap}
+Phonegap es una solución (software libre) para construir aplicaciones móviles multiplataformas usando tecnologías web estándar, como HTML, CSS y JavaScript \cite{MTPHGAP}. Además permite el acceso a los widgets de los móviles, tales como el acceso a los sensores del dispositivo, acceso a la cámara, acelerómetro y otros a través de su API. Entre los beneficios de Phonegap están:
+\begin{itemize}[noitemsep,nolistsep]
+\item Incrementa la velocidad de desarrollo de aplicaciones móviles. 
+\item Permite que desarrollando una vez las aplicaciones sean multiplataforma.
+\item No es necesario saber desarrollar en cada uno de los lenguajes (de cada plataforma móvil) para desarrollar la aplicación. Sólo es necesario tener conocimientos de programación web y tener en cuenta el API.
+
+\section{Cordova} \label{sect:Cordova}
+Es la plataforma en la cual está basada PhoneGap. Es la que permite el uso de las funciones de los dispositivos móviles, sin importar a que plataforma pertenecen (Android, iOS, Windows Phone, BlackBerryOS). Por esa razón, la mayoría de las funciones y comandos son idénticas, y muchas documentaciones se refieren a PhoneGap y Cordova como la misma plataforma \cite{MTCORD}.
+
+\section{AngularJS} \label{sect:AngularJS}
+Es un framework (software libre) mantenido por Google y la comunidad que ayuda a la creación de aplicaciones de página única (SPA) usando HTML, CSS y JavaScript. Logra simplificar el desarrollo ya que está basado en el modelo MVC que permite estructurar el código de manera adecuada para darle cierto poder de desarrollo del lado del cliente. Es extensible y su integración es sencilla; cada característica puede ser sobrescrita o modificada según se requiera \cite{MTSANGULAR}.
+
+\section{Ionic Framework} \label{sect:Ionic Framework}
+Ionic es un framework de desarrollo de aplicaciones usando HTML5 que contribuye a diseñar aplicaciones móviles que permitan dar la sensación de ser nativas en cuanto a su desempeño \cite{MTIONIC}. Se apoya en Phonegap para poder crear la aplicación y potencia así la velocidad de desarrollo de la misma. Además, viene integrado con AngularJS. 

@@ -1,0 +1,561 @@
+\chapter{Desarrollo de la Aplicación}\label{chapter:Desarrollo de la Aplicacion}
+
+Este capítulo describe las actividades realizadas en la concepción, diseño, construcción y transición del prototipo de la aplicación web y de la aplicación móvil de Notificaciones Plus. 
+Está dividido en secciones, cada una de ellas representando una fase de la metodología adoptada, descrita en el capítulo anterior.
+
+\section{Concepción} \label{sect:Concepcion}
+El objetivo de esta fase consistió en recolectar la información necesaria para levantar los requerimientos del cliente para las aplicaciones a desarrollar. Por este motivo se realizaron reuniones periódicas con el mismo para determinar detalladamente dichos requerimientos y definir las características que tanto la aplicación web, como la aplicación móvil de Notificaciones Plus debería poseer.
+Esta fase tuvo una duración de 2 semanas, y se realizaron las siguientes actividades:
+\begin{itemize}[noitemsep,nolistsep]
+\item Familiarización con la empresa y el entorno laboral.
+\item Investigación sobre las prácticas de la empresa.
+\item Levantamiento de requerimientos funcionales y no funcionales.
+\item Identificación y mitigación de riesgos que puedan afectar el desarrollo del sistema.
+\item Investigación general de herramientas disponibles para ambas aplicaciones (Web y Móvil)
+\item Investiagación de la plataforma Synergy Push.
+\end{itemize}
+
+En esta etapa del desarrollo, se inició el documento de especificación funcional y el documento de arquitectura de software de Notificaciones Plus para Synergy-GB, el cual se refinó en repetidas oportunidades de acuerdo a las solicitudes que el cliente realizó (ver Apéndices A y B, el cual incluye los requerimientos).
+
+\subsection{Requerimientos}
+La lista de requerimientos se realizó de acuerdo al plan de trabajo y a varias reuniones con el cliente para aclarar todo el objetivo de ambas aplicaciones. En la Tabla ~\ref{table:ReqFunc} se presenta un resumen de los requerimientos funcionales de la aplicación web y de la aplicación móvil de Notificaciones Plus (véase el Apéndice B para más información).
+
+\begin{table}[H]
+%\centering 
+\begin{tabular}{| p{6cm} | p{10cm} |}
+\hline 
+\bfseries \footnotesize {Requerimiento} & \bfseries \footnotesize {Descripción} \\ 
+\hline 
+\bfseries \footnotesize {Gestionar sesión} &\footnotesize Un usuario debe poder iniciar sesión luego de autenticar sus credenciales y cerrar una sesión previamente iniciada. \\ \hline 
+\bfseries \footnotesize {Permitir registro} & \footnotesize Un usuario debe poder registrarse desde su dispositivo móvil a la plataforma Synergy Push Services para poder luego iniciar sesión y usar la plataforma. \\ \hline 
+\bfseries \footnotesize {Recibir Notificación Push} & \footnotesize El dispositivo del usuario debe poder recibir automáticamente notificaciones Push provenientes de la plataforma Synergy Push Services, una vez el usuario haya iniciado sesión. \\ \hline 
+\bfseries \footnotesize {Recibir y Abrir Mensajes Completos} & \footnotesize Un usuario debe poder seleccionar una notificación de su buzón y abrirla para ver todo su contenido. \\ \hline 
+\bfseries \footnotesize {Devolver respuesta de una o dos opciones a mensajes que lo requieran} & \footnotesize Un usuario debe poder seleccionar una opción de respuesta a mensajes que requieran esta acción por parte del usuario, como alertas de seguridad interactiva y notificaciones de operaciones bancarias. \\ \hline 
+\bfseries \footnotesize {Compartir Mensaje} & \footnotesize Un usuario debe poder compartir desde el buzón y la vista de detalles, un mensaje a través de otras aplicaciones instaladas en su dispositivo móvil. \\ \hline 
+\bfseries \footnotesize {Eliminar Mensajes} & \footnotesize Un usuario debe poder eliminar desde el buzón y la vista de detalles, cualquier mensaje que se encuentre allí. \\ \hline 
+\end{tabular}
+\footnotesize \caption{Resumen de requerimientos funcionales de la aplicación web y de la aplicación móvil de Notificaciones Plus. Elaboración propia.}
+\label{table:ReqFunc}
+\end{table}
+
+Un resumen de los requerimientos no funcionales pueden verse en la Tabla ~\ref{table:ReqNoFunc} (pueden consultarse a detalle en el Apéndice B).
+
+\begin{table}[H]
+\centering 
+\begin{tabular}{| p{3cm} | p{13cm} |}
+\hline 
+\bfseries \footnotesize {Requerimiento} & \bfseries \footnotesize {Descripción} \\ 
+\hline 
+\bfseries \footnotesize {Funcionalidad} & \footnotesize El sistema debe cumplir con todas las funcionalidades especificadas en los casos de uso. \\ \hline 
+\bfseries \footnotesize {Usabilidad} & \footnotesize El sistema debe ser fácil e intuitivo de usar.  \\ \hline 
+\bfseries \footnotesize {Eficiencia} & \footnotesize El sistema debe llevar a cabo todos sus procesos de manera rápida y eficiente.  \\ \hline 
+\end{tabular}
+\footnotesize \caption{Resumen de requerimientos no funcionales de la aplicación web y de la aplicación móvil de Notificaciones Plus. Elaboración propia.}
+\label{table:ReqNoFunc}
+\end{table}
+
+
+En la Figura ~\ref{fig:arqbb+} se muestra la especificación del requerimiento “Consultar beneficiarios”, incluyendo las interfaces y estructuras de datos asociadas. En el Apéndice B se encuentra la especificación para cada uno de los requerimientos de la Tabla ~\ref{table:ReqNoFunc} y la Tabla ~\ref{table:ReqFunc}.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=1,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/reqespec}
+  \caption{Especificación del Requerimiento Consultar Directorio. Elaboración propia.}
+  \label{fig:arqbb+}
+\end{figure}
+
+
+\subsection{Riesgos}
+El propósito de la lista de riesgos es, en primer lugar, identificar aquellos elementos que pueden afectar negativamente la ejecución del proyecto. Además, permite medir el impacto de cada riesgo y planificar estrategias de mitigación y acciones de contingencia en caso de materializarse alguno de ellos.
+
+
+Los principales riesgos detectados fueron, en su mayoría, desacuerdos que se originaban por problemas de comunicación entre el desarrollador y el cliente, además de desiciones de diseño que no estaban tomadas y quedaban a improvisación por parte del desarrollador. No obstante, como en este caso el rol de cliente es asumido por la misma empresa Synergy-GB,  las acciones tomadas para mitigar estos riesgos consisten en la realización de reuniones periódicas para mantener los objetivos y requerimientos claros y actualizados.
+
+
+Probablemente el riesgo principal sea que la funcionalidad principal de la aplicación, que son la recepción de notificaciones Push, dependían de software de terceros, experimental, ajeno a la plataforma Ionic, del cual la compañía nunca había utilizado y no había ninguna garantía que funcionara. 
+
+
+Otros riesgos que influían en el desarrollo de la aplicación fueron aquellos asociados al cálculo erróneo del tiempo de desarrollo, la pendiente de la curva de aprendizaje de determinadas herramientas utilizadas para el desarrollo del proyecto, en especial AngularJS y su interacción con Cordova, y la subestimación del monto de esfuerzo a ser empleado. Todos estos riesgos fueron mitigados con estrategias de planificación que contemplaran la importancia de los componentes críticos de la aplicación y la complejidad de ciertas herramientas a utilizar (para mayor detalle de los riesgos consultar el Apéndice A).
+
+
+\subsection{Tecnologías y plataformas de desarrollo}
+El proyecto tenía que ser desarrollado bajo ambientes adecuados y hacer uso de tecnologías innovadoras que otorgaran el máximo de beneficios. Para la implementación de la aplicación móvil de Notificaciones+ se utilizaron las herramientas implícitas (frameworks, lenguajes y plataformas) en el desarrollo de una aplicación multiplataforma con Ionic Framework. En orden piramidal: 
+
+\begin{itemize}[noitemsep,nolistsep]
+\item Ionic Framework
+\item AngularJS
+\item JavaScript
+\item HTML5/CSS3
+\item ngCordova
+\item Cordova/Phonegap
+\item iOS/Android
+\end{itemize}
+
+Se usó Sublime como editor de texto. Toda la programación se hizo en una PC corriendo Ubuntu 14.10. Se usó un computador MAC OSX para compilar y correr bajo la plataforma iOS debido a las políticas de exclusividad de esa herramienta. También se hizo uso limitado de los respectivos emuladores Android y iOS. Los dispositivos de prueba fueron:
+\begin{itemize}[noitemsep,nolistsep]
+\item iPhone 5 con iOS 7
+\item Samsung Galaxy Nexus con Android 4.3 
+\item HTC One S con Android 4.1.1
+\item Huawei con Android 4.4
+\end{itemize} 
+
+
+\subsection{Casos de Uso}
+
+Los Casos de Uso proporcionan uno o más escenarios, los cuales definen la secuencia acciones que debe llevar a cabo el usuario para activar una funcionalidad de las aplicaciones.
+
+El Modelo de Casos de Uso de la aplicación es utilizado con el fin de ilustrar tanto las funcionalidades como la relación entre ellas y los actores que las usan. En la Figura ~\ref{fig:dcuinicial} se puede observar el Diagrama de Casos de Uso inicial, que posteriormente se refinó ya que se ampliaron las funcionaliades y se aclararon ciertos requerimientos de software.
+
+En el mismo se observa que se identificaron dos actores. En primer lugar, el Usuario, que se encarga de hacer uso de Notificacones+. Luego, el otro actor es Synergy Push que es la plataforma a la cual se conecta la aplicación para obtener mensajes.
+
+
+\subsection{Planificación Inicial}
+
+Esta actividad consistió en estimar una planificación para el desarrollo del proyecto: el orden en que serán implementados los Casos de Uso (CU) y el tiempo que debía tomar cada uno de ellos. La Figura ~\ref{fig:dcuinicial} muestra el diagrama de Casos de Uso Inicial que permitío establecer la planificación. 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.3,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/Diagrama_de_Casos_de_Uso_v1_5}
+  \caption{Diagrama de Casos de Uso inicial de Notificacones+. Elaboración propia.}
+  \label{fig:dcuinicial}
+\end{figure}
+
+Luego, se estableció un plan de tres iteraciones de 5 semanas cada una aproximadamente. En la primera iteración se planificó llevar a cabo los CU básicos de iniciar y cerrar sesión, así como los CU relacionados con “Gestionar Resumen Bancario” y “Gestionar productos”, en la segunda iteración los CU relacionados con “Gestionar Directorio”, “Gestionar Afliaciones” y “Gestionar Perfil”.  Finalmente, en la última iteración los CU que permitan realizar transferencias y pagos y “Listar Mensajes”.
+
+\section{Diseño} \label{sect:Diseno}
+En esta fase, inicialmente se estudiaron los diagramas de clases de la arquitectura Banca+ Multicanal, y posteriormente se realizó el diseño de la arquitectura del canal web, los componentes necesarios para la misma y las políticas de interacción entre cada uno de ellos. Esta arquitectura ha sido diseñada junto con el dueño del producto y siguiendo los lineamientos establecidos por Banca+ Multicanal (una descripción de la arquitectura más detallada puede consultarse en el Apéndice D). Esta iteración contó con una duración de dos semanas.
+
+\subsection{Arquitectura Banca+ Multicanal}
+Debido a que el canal web es desarrollado bajo el marco de Banca+ Multicanal, es necesario presentar el diagrama de clases de esta arquitectura, el cual puede observarse en la  Figura  ~\ref{fig:corebb+} (una descripción más detallada puede consultarse en el Apéndice C). 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.4,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/Core}
+  \caption{Diagrama de clases de Banca+ Multicanal. Elaborado por Synergy-GB.}
+  \label{fig:corebb+}
+\end{figure}
+
+
+	En la Figura ~\ref{fig:corebb+} pueden observarse las enumeraciones que definen los canales y los tipos de datos que manejan los mismos, así como la interfaz \textit{ChannelSPI} junto con la clase \textit{Operation} que permiten implementar un canal con su lista de operaciones. Por otra parte, la clase \textit{Connector} es el punto de entrada de las peticiones a Banca+ Multicanal y se encarga de invocar al \textit{Dispatcher} que es el responsable de encontrar el manejador para la operación del canal correspondiente a la petición, al método \textit{deserialize} del \textit{Serializer} para convertir el JSON de entrada en un \textit{DataTransferModel}, al método \textit{handle} del \textit{Handler} retornado anteriormente para ejecutar la lógica de la operación y finalmente al método \textit{serialize} del \textit{Serializer}  para convertir el \textit{DataTransferModel} devuelto por el \textit{Handler} en un JSON.
+
+
+	Esta iteracción entre los objetos a lo largo del tiempo para cada petición de un canal particular se muestra en el diagrama de secuenca de la Figura ~\ref{fig:secuenciabb+}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/secuencia}
+  \caption{Diagrama de secuencia de Banca+ Multicanal. Elaborado por Synergy-GB.}
+  \label{fig:secuenciabb+}
+\end{figure}
+
+Adicionalmente, Banca+ Multicanal provee una clase abstracta para facilitar la integración con los servicios de un banco particular, la cual se puede observar en la Figura  ~\ref{fig:communicationbb+}. La implementación de estos métodos en conjunto deben permitir crear la petición, conectarse con el servicio del \textit{core}, verificar la respuesta y transformarla a los modelos de Banca+.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.6,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/communicationbb+}
+  \caption{Diagrama de la clase \textit{Communication} de Banca+ Multicanal. Elaborado por Synergy-GB.}
+  \label{fig:communicationbb+}
+\end{figure}
+
+En los diagramas mostrados en la Figura  ~\ref{fig:corebb+} y  ~\ref{fig:communicationbb+} se muestran las clases abstractas o interfaces que deberan ser extendidas o implementadas para desarrollar el \textit{backend} de Banca+ Internet Banking. Este proceso será explicando detalladamente en la Fase de Construcción. 
+
+
+\subsection{Diseño de la arquitectura}
+A la hora de diseñar la arquitectura de este canal, se siguieron los lineamientos de Banca+ Multicanal, basados en la modularización y flexibilidad que permitan realizar la instanciación a un banco particular de forma rápida y sencilla. 
+
+\subsubsection{Vista de Escenarios}
+En la Figura ~\ref{fig:cudef} se presenta el Diagrama de Casos Uso de Banca+ Internet Banking, correspondiente a la Vista de Escenarios. En él se observa que se desglozaron los CU relacionados con  “Gestionar transferencias y pagos” en comporación al diagrama de Casos de Uso Inicial debido al conocimiento adquirido a lo largo del desarrollo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/Scenarios}
+  \caption{Diagrama de casos de uso definitivo de Banca+ Internet Banking. Elaboración propia.}
+  \label{fig:cudef}
+\end{figure}
+
+En la Figura ~\ref{fig:cuespec} se presenta la especificación del CU “Consultar directorio”. En el Apéndice B se pueden consultar las especificaciones de todos los CU del diagrama de la Figura ~\ref{fig:cudef}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.9,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/cuespec}
+  \caption{Especificación del Caso de Uso “Consultar directorio”. Elaboración propia.}
+  \label{fig:cuespec}
+\end{figure}
+
+\subsubsection{Vista Lógica}
+El canal web estará conformado por clases que se encargarán de definir los objetos que se manejan y su relación. A continuación, en la Figura ~\ref{fig:clases} se muestra el Diagrama de Clases del canal web, el cual representa la Vista Lógica del mismo. 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/clases}
+  \caption{Diagrama de Clases de Banca+ Internet Banking. Elaboración propia.}
+  \label{fig:clases}
+\end{figure}
+
+En el diagrama de clases se pueden observar los instrumentos manejados por el banco especializados de acuerdo a sus tipos,
+el directorio de beneficiarios y los servicios afiliados de los usuarios y demás objetos que son utilizados dentro de la lógica del canal web.
+
+Adicional al diagrama de clases, se presenta la lógica de cómo se realiza el CU “Consultar directorio” a través del diagrama de secuencia de la Figura ~\ref{fig:secuencia2}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/secuencia2}
+  \caption{Diagrama de Secuencia del CU “Consultar directorio”. Elaboración propia.}
+  \label{fig:secuencia2}
+\end{figure}
+
+Es importante destacar que una vez que Banca+ Multicanal recibe la petición sigue los pasos del diagrama de secuencia de la Figura ~\ref{fig:secuenciabb+}.
+\subsubsection{Vista de Desarrollo}
+La vista de desarrollo de la arquitectura de Banca+ Internet Banking se ve reflejada en el Diagrama de Componentes que se muestra en la Figura ~\ref{fig:componentes}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/componentes}
+  \caption{Diagrama de Componentes de Banca+ Internet Banking. Elaboración propia.}
+  \label{fig:componentes}
+\end{figure}
+
+En este diagrama se puede observar el patrón de diseño MVC, el modelo esta compuesto por los datos del banco (Core Bancario Dummy) y por los datos de sesión y \textit{cache} ( Multicanal NoSQL DB), el componente  Banca+ Canal Web representa al controlador y es el reponsable a través de sus componentes internos de la interacción entre el modelo y la vista, representada a su vez por Banca+ Web, encargada de presentar el modelo al usuario.
+
+\subsubsection{Vista de Implantación}
+La vista de implantación de la arquitectura de Banca+ Internet Banking se ve reflejada en el Diagrama de Despliegue que se muestra en la Figura ~\ref{fig:despliegue}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/despliegue}
+  \caption{Diagrama de Despliegue de Banca+ Internet Banking. Elaboración propia.}
+  \label{fig:despliegue}
+\end{figure}
+
+Es importante aclarar que la comunicación se realiza a través de HTTP debido a que es un prototipo, posteriormente cada una de estas se comunicará a través de HTTPS/SSL. La información que se comparte entre los nodos se encuentra en formato JSON.
+
+\subsubsection{Vista de Procesos}
+La Vista de Procesos no fue desarrollada, dado que la aplicación no resuelve aspectos de concurrencia de usuarios y de datos. Los mismos son resueltos por la arquitectura Banca+ Multicanal dentro de los módulos que ofrece, específicamente en el módulo de \textit{caching} que maneja los datos de sesión y de \textit{cache}, utilizando los mecanismos que provee el cliente de Java con el que se conectan a la base de datos NoSQL.
+
+\subsubsection{Vista de Datos}
+La Vista de Datos no fue desarrollada dado que el \textit{backend} como tal no cuenta con una base de datos propia. En su lugar, se alimenta de datos provistos por los servicios web que exponen la simulación de un \textit{core} bancario, y el  \textit{frontend} a su vez, se alimenta de los servicios web expuestos por Banca+ Mullticanal. 
+
+Es importante mencionar que cuando el \textit{backend} sea instanciado para algún banco particular, se alimentará de los datos expuestos por dicho banco, tal como se muestra en la Figura  ~\ref{fig:arqbb+}.
+
+\subsection{Planificación del desarrollo}
+Para finalizar esta iteración se definió un plan inicial de desarrollo basado en los objetivos del proyecto, el plan de pasantía inicial y los requerimientos. Este plan consta de tres (3) iteraciones, de 5 semanas de duración cada una aproximadamente. En la Tabla ~\ref{table:iteraciones} se describen los objetivos de cada iteración.
+
+\begin{table}
+%\centering 
+\begin{tabular}{| p{2.5cm} | p{13.5cm} |}
+\hline 
+\bfseries \footnotesize {Iteración} & \bfseries \footnotesize {Objetivos finales} \\ 
+\hline 
+\bfseries \footnotesize {Iteración 1} & \begin{itemize}[noitemsep,nolistsep]
+\item \footnotesize Estudio del API del canal móvil de Banca+.
+\item \footnotesize Creación del canal web dentro de Banca+ Multicanal.
+\item \footnotesize Diseño e implementación del servicio simulado del core bancario y diseño e implementación para las funcionalidades:
+\begin{itemize}[noitemsep,nolistsep]
+\item \footnotesize Iniciar sesión
+\item\footnotesize  Cerrar sesión
+\item \footnotesize Consultar resumen financiero
+\item \footnotesize Consultar movimientos
+\item \footnotesize Consultar detalle de producto
+\item \footnotesize Bloquear o desbloquear productos
+\end{itemize}
+\item \footnotesize Creación de la vista de detalle de productos e integración con el frontend de las funcionalidades implementadas.
+\end{itemize}
+\\ \hline 
+\bfseries \footnotesize {Iteración 2} & \begin{itemize}[noitemsep,nolistsep]
+\item \footnotesize Diseño e implementación del servicio simulado del core bancario y diseño e implementación para las funcionalidades:
+\begin{itemize}[noitemsep,nolistsep]
+	\item \footnotesize Consultar directorio
+	\item \footnotesize Afiliar beneficiario
+	\item \footnotesize Convertir beneficiario en favorito
+	\item \footnotesize Consultar afiliaciones
+	\item \footnotesize Afiliar y desafiliar servicios
+	\item \footnotesize Consultar y Modificar perfil
+\end{itemize}
+\item \footnotesize Creación de las vistas de Beneficiarios y Afiliaciones.
+\item \footnotesize  Integración de las funcionalidades implementadas con el frontend.
+\end{itemize}
+ \\ \hline 
+\bfseries \footnotesize{Iteración 3} & \begin{itemize}[noitemsep,nolistsep]
+\item \footnotesize Diseño e implementación del servicio simulado del core bancario y diseño e implementación para las funcionalidades: 	\begin{itemize}[noitemsep,nolistsep]
+	\item \footnotesize Obtener datos transaccionales
+	\item \footnotesize Realizar transferencias y pagos
+	\item \footnotesize Agregar transferencia o pago programado
+	\item \footnotesize Listar transacciones programadas
+	\item \footnotesize Listar mensajes
+\end{itemize}
+\item \footnotesize Integración de las funcionalidades implementadas con el frontend.
+\item \footnotesize Incluir errores de validaciones de campos para todas las operaciones del canal.
+
+\end{itemize}
+  \\ 
+\hline 
+\end{tabular}
+\footnotesize \caption{Iteraciones de desarrollo de Banca+ Internet Banking y sus objetivos. Elaboración Propia.}
+\label{table:iteraciones}
+\end{table}
+
+
+\section{Construcción} \label{sect:Construccion}
+Esta fase se centró en el desarrollo de las funcionalidades y Casos de Uso previamente definidos, siguiendo la planificación especificada en la Tabla ~\ref{table:iteraciones}. El mismo se llevó a cabo de acuerdo a los estándares de Synergy-GB promoviendo la modularidad, reutilización y gerencia de cambio
+
+Al finalizar cada iteración, los componentes desarrollados fueron probados para permitir la verificación de la correctitud de las funcionalidades implementadas. Al finalizar esta etapa, dichos componentes quedaron listos para pasar a las pruebas de sistemas y de aceptación, las cuales, sobre la base de la metodología que se está utilizando, se hacen en la fase de transición.
+
+\subsection{Iteración 1}
+En esta iteración se realizaron las tareas de los Sprint 1, 2 y 3 (pueden consultarse a detalle en el Apéndice F). Para cumplir los objetivos propuestos para esta etapa, en primer lugar, se realizó un estudio del API del canal móvil de Banca+ para realizar un diseño preliminar del API del canal web, tomando en consideración las diferencias entre estos canales. Durante esta actividad se perfeccionaron los atributos de los objetos que son manejados en el canal.
+
+
+En segundo lugar, una vez entregada una versión inicial del código de Banca+ Multicanal, se procedió a definir un nuevo canal dentro de la arquitectura, denominado “WEB”, específicamente en la enumeración \textit{Channel}, que se observa en la Figura ~\ref{fig:corebb+} y representa los canales con lo que Banca+ Multicanal sabe como comunicarse. 
+
+
+Luego, se crearon las tres capas necesarias para desarrollar el \textit{backend}: Fachada, Canal y Proveedor. La capa Fachada es la responsable de exponer cada operación a través de servicios web REST utilizando la librería JAX-RS. La capa Canal consiste en la implementación de la lógica de cada operación del canal y, finalmente, la capa Proveedor se encarga de la comunicación con la simulación del \textit{core} bancario y el procesamiento de las respuestas obtenidas para otorgar las mismas a la capa Canal. 
+
+
+Siguiendo los lineamientos de la arquitectura Banca+ Multicanal, se creó en la capa Canal la implementación de la interfaz \textit{ChannelSPI} de la Figura ~\ref{fig:corebb+} para el canal web, denominado \textit{WebSPI} en el cual se irá definiendo la lista de operaciones del canal a medida que se desarrollan. Adicionalmente, en base a los requerimientos no funcionales del proyecto y de acuerdo a las mejores prácticas de Synergy-GB, en esta capa  se creó una clase abstracta denominada \textit{BankSPI} cuya extensión se debe encontrar en la capa Proveedor, siguiendo los lineamientos de Service Provider Interface (SPI) descrito en la sección ~\ref{sect:Iterfaz de Proveedor de Servicios}. Esta clase \textit{BankSPI} define las métodos de comunicación con el banco que necesita el canal para funcionar y gracias a la utilización de este patrón, distintos proveedores (asociados a los distintos bancos para los que se puede instanciar Banca+) pueden sobreescribir estos métodos sin necesidad de modificar las operaciones del canal.
+
+
+Para finalizar con la creación del canal web se crearon una serie de archivos impuestos por la arquitectura; en específico, un archivo para los mensajes de error del \textit{core}  bancario utilizado por el modulo de mensajes (cuya documentación se encuentra en el Apéndice C), un archivo especificando la ruta donde están expuestos los servicios del \textit{core} bancario y los datos necesarios para comunicarse con Couchbase para el manejo del \textit{cache}. Y finalmente, un archivo de propiedades para especificar la relación entre los tipos de instrumentos del \textit{core} bancario y los tipos de Banca+ Multicanal.
+
+
+Una vez finalizada la creación del ambiente del canal web, se procedió a diseñar e implementar la simulación del \textit{core} bancario para cada funcionalidad. En el diseño se tomaron en consideración los servicios de algunos de los bancos con los que ha trabajado la empresa con anterioridad con el objetivo de hacer la simulación lo más cercana a la realidad posible y para la implementación se utilizó la librería para servicios web REST de Spring. Es importante mencionar que dado que es una simulación, no se utilizó una base de datos sino que los datos se mantenían en memoria.
+
+
+Posteriormente, para cada operación del canal, primero se diseñó el modelo de entrada y salida del servicio web REST que la expondrá, actualizando el documento de Arquitectura de Servicio REST que puede ser consultado en el Apéndice E. Es importante mencionar que cada JSON de respuesta tendrá un campo “\textit{status}” con el código y el mensaje de error que indica si todo funcionó de forma correcta o el error que haya ocurrido.
+
+
+Luego, para la implementación de dicha operación, se realizaron las siguientes tareas en el Canal:
+
+\begin{itemize}[noitemsep,nolistsep]
+	\item Definir el identificador de la operación. 
+	\item Crear las clases correspondientes a los objetos manejados por la operación.
+	\item Crear una clase para manejar la lógica de la operación que extienda la clase \textit{Handler} de la Figura ~\ref{fig:corebb+}, con los modelos de entrada y salida definidos en el diseño.
+	\item Incluir en el \textit{WebSPI}  la operación con su identificador y manejador.
+	\item Implementar la lógica de la operación en el manejador inyectando a través de la inyección de dependencias que provee Java EE 7 los módulos necesarios para la misma, entre los cuales se encuentra el \textit{BankSPI} mencionado anteriormente para comunicarse con el banco.
+
+\end{itemize}
+
+En el Proveedor se debe implementar el método correspondiente del \textit{BankSPI} llamado por el manejador de la operación, utilizando la clase \textit{Communication} de la Figura ~\ref{fig:corebb+}. Esto involucra implementar la creación de la petición para el servicio del \textit{core} bancario que da la información o realiza el proceso relacionado con la operación, comunicarse con el mismo y al recibir la respuesta realizar la traducción a los modelos de datos que maneja el Canal o lanzar la excepción en caso de haber ocurrido un error. En esta implementación se utilizó la librería GSON para el manejo de las peticiones y respuestas en JSON del \textit{core} bancario.	
+
+
+Finalmente, en la Fachada se debe crear una clase con la anotación \textit{@Path} para indicar la ruta del servicio. Inyectar el Connector que se encarga de la orquestación de Banca+ Multicanal mostrado en la Figura ~\ref{fig:corebb+}, para dentro del método correspondiente anotado con \textit{@GET} o \textit{@POST}, dependiendo del tipo de petición de la operación, llamar al método process del \textit{Connector} indicando el identificador de la operación, el canal correspondiente y el MediaType, que para todo el proyecto es JSON, y seguir el proceso que se muestra en la Figura ~\ref{fig:secuenciabb+}.
+
+Luego de  implementar la operación se realizaron pruebas manuales sobre los servicios resultantes que permitieran verificar que los mismos corresponden con lo solicitado. Estas pruebas consisten en realizar peticiones a través de un cliente REST y verificar que se obtenga la salida adecuada para dicha petición. Se tomaron en consideración entradas con datos que provoquen los errores que puede retornar el \textit{core} bancario, así como el caso de que el \textit{core} bancario no esté disponible.
+
+
+En esta iteración se realizaron las funcionalidades: Iniciar sesión, cerrar sesión, consultar resumen financiero, movimientos, detalle de producto y bloquear o desbloquear un producto. Para cada uno de ellos se siguieron los pasos mencionados anteriormente. Sin embargo, en la implementación de cada una de ellas hay detalles de interés que mencionar:
+
+
+Para la operación de iniciar sesión se consideraron dos usuarios ficticios en la simulación del core bancario. Al implementar la operación en el canal web, se debe inyectar el Modulo de Manejo de Sesión (cuya documentación se puede consultar en el Apéndice C) que permite crear la sesión y guardarla en caso de que el banco autentique al usuario, retornando el identificador de la misma llamado “\textit{cookieId}”, que identificará al usuario en el resto de peticiones que realice dentro de la sesión. En todas las operaciones realizadas a continuación se debe inyectar el SessionManager que permita verificar si la sesión del usuario sigue activa.
+
+
+La operación de consultar el resumen financiero, involucró que en el \textit{core} bancario se crearon productos ficticios de cada tipo manejado por el banco para poder simular todas las opciones. En el manejador de esta operación en el canal web  se utilizó el Módulo de identificadores externos de Banca+ Multicanal (cuya documentación se puede consultar en el Apéndice C) para obtener el identificador externo de cada producto, que será utilizado en el API para identificar un producto en las peticiones futuras. Adicionalmente, se utiliza el módulo de \textit{caching} para almacenar en \textit{cache} el resumen financiero y obtenerlo sin necesidad de comunicarse con el banco en las próximas peticiones. Cabe destacar que los identificadores internos se enmascaran de cara a la aplicación utilizando la anotación \textit{@Conceal} que provee Banca+ Multicanal.
+
+
+Por otra parte, para la implementación de la lógica de consultar detalles de producto, se debe utilizar el Módulo de identificadores para obtener el identificador interno a partir del externo especificado en la petición. Los detalles de un producto también se almacenaron en \textit{cache}, por lo que antes de comunicarse con el banco, se realiza un \textit{get} a \textit{cache} para buscar esta información en caso de que haya sido consultado anteriormente dentro de la sesión. En el caso de Consultar movimientos, se debió realizar una validación de fecha para evitar el costo de la comunicación al banco en caso de que la petición contenga una fecha inválida.
+Finalmente, para el bloqueo de productos se utilizó una única ruta de servicio con un método \textit{GET} para consultar la información de bloqueo y un método \textit{POST} para bloquear o desbloquear un producto. Y se decidió no utilizar \textit{cache} debido a que estos datos no son consultables con tanta frecuencia por los clientes del banco.
+
+
+Para la integración con el \textit{frontend} fue necesario inicialmente estudiar el código y entenderlo, lo cual representó un gran esfuerzo debido a que el mismo no fue desarrollado siguiendo las mejores prácticas. Se modificó la función encargada de hacer el llamado a los servicios, dado que la que estaba implementada únicamente pasaba parámetros por URL y el API de servicios utiliza JSON en el cuerpo de algunas peticiones, y se colocó en cada vista las llamadas correspondientes a los servicios del API colocando las respuestas en los lugares adecuados de la página utilizando jQuery y JsRender. Finalmente, se creó la vista para el detalle de cada tipo de producto, utilizando los estilos ya definidos en el código y se integró con el servicio correspondiente. Es importante mencionar que esta vista es provisional dado que faltan detalles de estilo e íconos que no fueron desarrollados porque la modificación del \textit{frontend} no era parte del proyecto de pasantía.
+
+
+En esta iteración se realizaron pruebas unitarias para los 9 CU correspondientes a las funcionalidades implementadas. Estas pruebas fueron llevadas a cabo de forma manual, realizando peticiones a través de un cliente REST y verificando que se obtenga la salida adecuada para dicha petición. Se tomaron en consideración entradas con datos que provoquen los errores que puede retornar el \textit{core} bancario, así como el caso de que el \textit{core} bancario no esté disponible. Luego, se realizaron pruebas manuales de integración sobre el \textit{frontend} integrado con los servicios web expuestos por Banca+ Multicanal. Las pruebas de integración se realizaron junto al cliente con el objetivo de verificar que cumplan los objetivos planteados. Tanto las pruebas unitarias como las de integración resultaron exitosas. Por otra parte, en cuanto al cumplimiento de los requerimientos no funcionales, gracias a la Arquitectura Banca+ Multicanal y la utilización de patrones de diseño y \textit{loggeo} se asegura un \textit{backend} mantenible y escalable.
+
+\subsection{Iteración 2}
+En esta iteración se realizaron las tareas de los Sprint 4, 5 y 6 (pueden consultarse a detalle en el Apéndice F), que incluyen las funcionalidades: Consultar directorio, afiliar beneficiario, convertir beneficiario en favorito, consultar afiliaciones, obtener servicios del banco, afiliar y desafiliar servicios, consultar perfil y modificar perfil siguiendo el proceso de diseño e implementación del \textit{core} bancario y diseño e implementación de la operación en el canal mencionado en la iteración anterior.
+
+
+Es importante destacar que al igual que con los productos, los beneficiarios y servicios tienen identificadores externos que los identifican de cara a la aplicación. Sin embargo, al momento de iniciar esta iteración el Módulo de Identificadores aun no manejaba los tipos asociados a beneficiarios y servicios, por lo que se implementaron inicialmente con identificadores simulados. Al final de la iteración, una vez actualizado el módulo por parte del equipo desarrollador de Banca+ Multicanal, se colocó la correcta generación de los identificadores.
+
+
+Tanto el directorio como las afiliaciones fueron considerados objetos a almacenar en \textit{cache}, por lo que deben ser actualizados en la misma a través del modulo de \textit{caching} cada vez que se agrega un nuevo beneficiario, se convierte o elimina de favorito o se afilia o desafilia un servicio. Adicionalmente, se tomó la decisión de utilizar el mismo servicio para afiliar y desafiliar, dependiendo de si el identificador del servicio existe o no en las afiliaciones del usuario. También fue necesario implementar un servicio web que expongan los servicios que el banco ofrece para poder mostrar al usuario las opciones que tiene para afiliar.
+
+Finalmente, se creó la vista de Beneficiarios que incluiría las tres (3) funcionalidades relacionadas implementadas en esta iteración y la vista de Afiliaciones para la consulta, afiliación y desafiliación de servicios siguiendo los estilos definidos en el \textit{frontend} y la estructura del resto de las vistas desarrolladas. Es importante mencionar que, al igual que en la primera iteración, estas vistas son provisionales dado que faltan detalles de estilo e iconos que no fueron desarrollados porque la modificación del \textit{frontend} no era parte del proyecto de pasantía. Luego, se realizaron las llamadas a los servicios correspondientes en las nuevas vistas creadas y en la vista del perfil de usuario.
+
+
+Al finalizar la iteración, se realizaron pruebas unitarias para los 11 CU implementadas. Al igual que en la iteración anterior, estas pruebas fueron llevadas a cabo de forma manual utilizando un cliente REST y verificando que se obtenga la salida adecuada para cada petición. Adicionalmente, se tomó en consideración el tiempo de respuesta para cada petición, resultando mucho menor a los tres segundos planteados como límite. Luego, se realizaron pruebas manuales de integración sobre el \textit{frontend} integrado con los servicios web para cada uno de estos CU. Tanto las pruebas unitarias como las pruebas de integración resultaron exitosas.
+
+
+\subsection{Iteración 3}
+En esta iteración se realizaron las tareas de los Sprint 7, 8 y 9 (pueden consultarse a detalle en el Apéndice F) que incluyen las funcionalidades: obtener datos transaccionales, realizar transferencias y pagos, listar y agregar transferencias o pagos programados y listar mensajes siguiendo el proceso de diseño e implementación del \textit{cache} bancario y diseño e implementación de la operación en el canal mencionado en la iteración anterior. Así como las pruebas manuales unitarias y de integración sobre cada uno de ellas.
+
+
+La operación de obtener datos transaccionales se encarga de comunicarse con el banco para obtener toda la información necesaria para las transferencias o pagos que desee realizar un usuario. Es decir, retorna la información de todos los elementos que pueden ser utilizados como destino: lista de beneficiarios, lista de afiliaciones, tarjetas de crédito y préstamos. No se incluyen las cuentas propias porque no hay ninguna información de pagos que se necesite conocer previamente. Este servicio debe consultarse para obtener los elementos que pueden ser mostrados al usuario como posibles destinos de la transacción que desea realizar; es decir, siempre se consulta antes de realizar una transferencia o pago.
+
+
+Luego, en la simulación del \textit{core} bancario, se crearon servicios particulares para la transferencia de cuentas propias, de terceros o de otros bancos; para el pago de tarjetas propias, de terceros o otros bancos; para el pago de servicios y para el pago de préstamos personales. Estos servicios no implementan el algoritmo financiero real correspondiente debido a que son simulados; sin embargo, se realizó el esfuerzo de considerar una serie de validaciones sobre los productos como el sobregiro de cuentas, o utilizar un producto bloqueado, así como la disminución o aumento de los montos disponibles para dar credibilidad a las pruebas realizadas sobre el canal web.
+
+
+Al momento de diseñar la operación de Transferencias y Pagos se decidió considerar como entrada al servicio una lista de transferencias o pagos que permitiera realizar en una sola petición múltiples transacciones de distintos origen a distintos destinos. Al manejar una lista, el  campo “\textit{status}” que indica los errores en los JSON de respuesta no permitía mostrar que algunas transacciones pueden ser exitosas y otras no, por lo que se incorporó un campo “\textit{status}” para cada transacción de la lista, adicional al de la respuesta (para más detalles consultar el Apéndice E).
+
+
+En cuanto a la implementación de la operación de Transferencias y Pagos, requirió un gran esfuerzo pues se decidió unificar en un solo manejador todos los distintos tipos de transferencias y pagos que puede realizar un usuario (debido a la similitud de los pasos a seguir en cada una de ellas). Dado que antes de este servicio se realiza el de obtener datos transaccionales se sabe que cualquier elemento que el usuario desee pagar se encuentra almacenado en \textit{cache}, por lo que se realiza un \textit{get} a través del módulo de \textit{caching} para obtener el objeto genérico de destino según el identificador externo de la petición, y se verifica si dicho objeto es una instancia de Instrumento, Beneficiario o Servicio para comunicarse con el método correspondiente del \textit{BankSPI}. Dentro de la implementación de cada uno de estos métodos, se realiza la comunicación al servicio web correspondiente dependiendo del tipo de instrumento, beneficiario o servicio. Para finalizar la implementación de esta operación, fue necesario eliminar de \textit{cache} (utilizando el método \textit{delete} del modulo de \textit{caching}) los movimientos, los datos transaccionales, los detalles de los instrumentos involucrados y las afiliaciones si la operación tenía como destino un servicio debido a que los datos pudieron cambiar por la ejecución de la operación.
+
+
+Posteriormente, para manejar transferencias y pagos programados en la simulación del \textit{core} bancario fue necesario utilizar la anotación \textit{Scheduled} provista por Spring, para crear una tarea periódica que se ejecute todos los días a una hora particular y realice todas las transacciones que tienen programadas los dos usuarios que maneja la simulación. Es importante mencionar que esta funcionalidad pertenece al core bancario, pero no es expuesta a través de un servicio, pues se realiza independiente de las peticiones del canal web. Sin embargo, el canal es el que se encarga de enviar al \textit{core} bancario las transacciones programadas para que éste las almacene.
+
+
+Cada una de las funcionalidades desarrolladas se integró con el \textit{frontend} de Banca+ tal como se mencionó en las iteraciones anteriores. Adicionalmente, éste permite al usuario crear una cola de transacciones de distintos orígenes y destinos para procesar juntas, lo cual se pudo realizar con una única llamada al servicio de transferencias y pagos gracias al diseño planteado y explicado anteriormente.
+
+
+Posteriormente, para finalizar esta iteración, se incluyeron validaciones de campos obligatorios y formatos en todos los modelos de datos de entrada de los servicios, a través de una serie de anotaciones provistas por Banca+ Multicanal, entre estas se encuentran: \textit{@Mandatory} para indicar que el campo es obligatorio y \textit{@RegexValidation} para utilizar una expresión regular para validar el formato de un campo; por ejemplo, para validar el formato de los correos, o de los identificadores de productos, servicios y beneficiarios.
+
+Una vez incluidas estas validaciones, se realizaron pruebas unitarias manuales sobre todos los servicios desarrollados en esta iteración y en las anteriores considerando peticiones con campos con formatos erróneos o vacíos. Estas pruebas resultaron exitosas. Es importante destacar que si bien no se llevó a cabo un proceso exhaustivo de pruebas, las pruebas realizadas permiten asegurar que el prototipo al finalizar las iteraciones cumple con los requerimientos funcionales, así como con los requerimientos no funcionales, garantizados a través del diseño de los componentes del \textit{backend}, la utilización de patrones de diseño y de herramientas que permitan el \textit{loggeo} y la actualización de software, adicional a lo que provee Banca+ Multicanal para asegurar un producto mantenible, extensible y configurable. 
+
+
+
+\subsection{Descripción general del producto}
+Al finalizar la fase de construcción, se cuenta con un prototipo funcional del Canal web de Banca+ validado por el cliente. En el Apéndice E se encuentra la descripción de los servicios del mismo. Estos servicios han sido integrados con el \textit{frontend} de Banca+ Web y el resultado permite: iniciar y cerrar sesión, consultar el resumen financiero y sus detalles, consultar movimientos, consultar el directorio y afiliar nuevos beneficiarios, consultar afiliaciones y afiliar servicios, realizar o programar transferencias o pagos, bloquear productos y consultar o modificar el perfil de usuario. 
+
+En la Figura ~\ref{fig:pantalla1} se muestra la pantalla de la página de inicio de sesión del sistema.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.4,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla1}
+  \caption{Inicio de sesión de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla1}
+\end{figure} 
+
+	Una vez iniciada la sesión del usuario se visualiza la página de inicio, la cual muestra el resumen financiero, las últimas cinco (5) transacciones que ha realizado el usuario con cualquiera de sus productos e informacion geo-posicionada sobre las agencias del banco. En la Figura ~\ref{fig:pantalla2} se muestra la captura de pantalla de esta página.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla2}
+  \caption{Página de inicio de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla2}
+\end{figure} 
+
+	El usuario no sólo dispone del resumen de sus productos; además, puede consultar el detalle de cada uno de ellos al seleccionarlo en la lista. En la Figura ~\ref{fig:pantalla3} se muestran los detalles de una tarjeta de crédito (datos básicos y movimientos asociados a ella).
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla3}
+  \caption{Detalle de una Tarjeta de Crédito de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla3}
+\end{figure} 	
+
+	Adicionalmente, si se presiona una transacción de la lista, se puede consultar el número de referencia de la misma y el lugar geográfico en el que fue realizada. En la Figura ~\ref{fig:pantalla4} se puede observar lo antes mencionado:
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla4}
+  \caption{Últimos movimientos de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla4}
+\end{figure}
+
+	Al seleccionar la opción del menú central de Transferencias y Pagos, se llega a la pantalla mostrada en la Figura ~\ref{fig:pantalla5}.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla5}
+  \caption{Transferencias y Pagos de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla5}
+\end{figure} 	
+
+	Para realizar una transferencia o pago se debe seleccionar la cuenta o tarjeta origen de la misma y el destino. En la Figura ~\ref{fig:pantalla6} se muestran los distintos tipos de destinos disponibles.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla6}
+  \caption{Posibles destinos de una Transferencia o Pago de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla6}
+\end{figure} 	
+
+	Los detalles de la transferencia o pago se especifican en formularios como los que se observan en la Figura ~\ref{fig:pantalla7}. Si el pago es a una tarjeta se pueden seleccionar el pago mínimo o la deuda, o especificar un monto en particular.  Si es un préstamo o servicio contratado se carga directamente el monto que se debe (se observa en la opción (b) en la Figura ~\ref{fig:pantalla7}). Si es un servicio prepagado se ofrecen una lista con los distintos montos que pueden recargar, y finalmente, si es una cuenta propia o un beneficiario se permite establecer un monto específico (tal como se muestra en la opción (a) en la Figura ~\ref{fig:pantalla7}).
+
+\begin{figure}[ht] 
+  \centering
+  \includegraphics[scale=0.6,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla7}
+  \caption{Formularios de descripción de Transferencia o Pago de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla7}
+\end{figure} 	
+
+	En caso de que se desee programar la transacción, se selecciona la opción de Programar esta transacción sobre el formulario mostrado anteriormente, y se indica si la frecuencia es mensual o semanal y el día particular en cada caso, como se muestra en la Figura ~\ref{fig:pantalla8}. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.6,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla8}
+  \caption{Transferencias o pagos programados con frecuencia semanal o mensual de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla8}
+\end{figure} 	
+
+	En la Figura ~\ref{fig:pantalla9} se muestra la captura de la pantalla de “Mis Productos”, correspondiente a una de las opciones del menú central. En ellas se muestra nuevamente el resumen de las cuentas y tarjetas del usuario, con la opción de bloquearlos o desbloquearlos y los movimientos que ha realizado el usuario organizados por meses (se pueden consultar los detalles de cada movimiento al igual que en la página de inicio).
+
+\begin{figure}[ht] 
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla9}
+  \caption{Mis Productos de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla9}
+\end{figure} 	
+
+	Al momento de bloquear los productos, se observa el formulario de la Figura ~\ref{fig:pantalla10}. Permite al usuario bloquear un producto por rango horario (tanto día de la semana como bloques horarios) o zona geográfica.
+
+\begin{figure}[ht] 
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla10}
+  \caption{Bloquear o desbloquear Productos de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla10}
+\end{figure}  
+
+	Al seleccionar la opción del menú central de Beneficiarios, se llega a la pantalla mostrada en la Figura ~\ref{fig:pantalla11}. En ella se observan todos los beneficiarios del directorio separados por cuentas o tarjetas del mismo banco o terceros, una lista de beneficiarios favoritos y la opción de afiliar un nuevo beneficiario al directorio.
+
+\begin{figure}[ht]  
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla11}
+  \caption{Beneficiarios de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla11}
+\end{figure} 
+
+	Al seleccionar un beneficiario de la lista se pueden observar los detalles del mismo como se muestra en la Figura~\ref{fig:pantalla11.1}, asi como seleccionar el botón de favorito para agregarlo o eliminarlo de la lista de favoritos del usuario.
+
+\begin{figure}[ht]  
+  \centering
+  \includegraphics[scale=0.9,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla11.1}
+  \caption{Detalle de un beneficiario de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla11.1}
+\end{figure} 
+
+	Para afiliar un nuevo beneficiario, primero se debe seleccionar el tipo del mismo (cuentas o tarjetas de Banco Synergy o cuentas o tarjetas de otro banco) y luego se despliega un formulario con los datos. En la Figura ~\ref{fig:pantalla12} se muestra la captura de ambas vistas.
+\begin{figure}[ht]  
+  \centering
+  \includegraphics[scale=0.55,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla12}
+  \caption{Afiliar un Beneficiario de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla12}
+\end{figure} 
+
+	En la Figura ~\ref{fig:pantalla13} se muestra la captura de la pantalla de Afiliaciones, correspondiente a una de las opciones del menú central. En ella se muestra la lista de servicios contratados y la lista de servicios prepagados a los que está afiliado y la opción de afiliar un nuevo servicio de cualquier de los tipos antes mencionados. 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla13}
+  \caption{Afiliaciones  de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla13}
+\end{figure} 	 
+
+	Si se desea afiliar un nuevo servicio, inicialmente el banco provee una lista de los servicios disponibles por categoría tal como se observa en la Figura ~\ref{fig:pantalla14}, y al seleccionarlo, se despliega el formulario con los datos necesarios para identificar el contrato particular de ese servicio, mostrado también en la Figura ~\ref{fig:pantalla14}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla14}
+  \caption{Afiliar nuevo servicio de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla14}
+\end{figure} 	
+
+	Al seleccionar un servicio, ya sea contratado o prepagado, se pueden observar los detalles del mismo y al hacer clic en la equis superior derecha del servicio se desafilia al mismo de la cuenta del usuario. Estos elementos se pueden observar en la Figura ~\ref{fig:pantalla14.1}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla14.1}
+  \caption{Detalle de un servicio de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla14.1}
+\end{figure} 	
+
+Por otra parte, el usuario puede consultar y actualizar sus datos en la pantalla de Mi Perfil, a la cual se accede al seleccionar el nombre del mismo en la barra superior.  Esta pantalla se muestra en la Figura ~\ref{fig:pantalla15}. 
+
+\begin{figure}[ht] 
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla15}
+  \caption{Perfil de Usuario de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla15}
+\end{figure} 	
+
+Finalmente, los mensajes del banco estan disponibles en todo momento, al hacer clic en el ícono con forma de sobre que se encuentra en la barra superior. En la Figura ~\ref{fig:pantalla16} se muestra la lista de mensajes.
+
+\begin{figure}[ht] 
+  \centering
+  \includegraphics[scale=0.5,type=png,ext=.png,read=.png,angle=0,origin=c]{imagenes/pantalla16}
+  \caption{Mensajes de Banca+ Web. Elaboración propia.}
+  \label{fig:pantalla16}
+\end{figure} 
+
+\section{Transición} \label{sect:Transicion}
+La fase de transición no fue llevada a cabo debido a que el objetivo del proyecto fue, desde su concepción, la elaboración de un prototipo inicial. Es por esto que, el \textit{backend} de Banca+, aún no ha entrado en una fase formal de transición a producción.

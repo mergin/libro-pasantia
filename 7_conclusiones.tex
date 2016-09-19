@@ -1,0 +1,43 @@
+\chapter{Conclusiones y Recomendaciones} 
+
+\label{chap:conclusiones}
+
+En este proyecto de pasantía se desarrolló la aplicación web y móvil de Notificaciones+, donde sus objetivos es ofrecer a sus usuarios una manera de recibir y recopilar todas sus notificaciones bancarias como alertas de seguridad, promociones y transacciones de cajeros automáticos. El proceso completo incluyó el diseño y desarrollo de las aplicaciones, y su conexión con la plataforma de mensajería Synergy Push ya existente en la compañía.
+
+
+Cabe acotar que las opciones y tipos de mensajes demostradas en esta aplicación a lo largo de todo el informe no son fijas y se pueden adaptar a las necesidades y preferencias de cualquier banco al que se le instancie la aplicación, incluso el cliente al que se le ofrezca la aplicación podría ser otro tipo de empresa diferente a un banco.
+
+
+Para el momento de concepción de este proyecto no existía un competidor en el mercado venezolano, ya que todos los bancos notifican a sus clientes a través de mensajería SMS o e-mail.
+
+
+Para poder lograr el proyecto, se usaron distintas herramientas entre las que se encuentran PhoneGap/Cordova, Ionic Framework y AngularJS para la aplicación móvil. Éstas permitieron su desarrollo sin necesidad de tener conocimientos específicos de ninguna plataforma móvil sino de programación web. Con el uso de buenas prácticas de programación para así lograr que la aplicación lograra un desempeño lo más similar posible a una aplicación nativa Android o iOS. AngularJS fue también la herramienta utilizada para desarrollar la aplicación web, usando adicionalmente Gulp para la automatización de tareas y una plantilla de aplicación web de la empresa.
+
+
+Luego de 20 semanas de su inicio, al final del proyecto de pasantía, se obtuvo un prototipo funcional para la aplicación móvil. Cumple con todos los requerimientos hechos por el cliente en el plan inicial y también con las funcionalidades extras que surgieron durante el desarrollo, ideadas por el pasante como complemento a las requerimientos básicos originales con la intención de mejorar el producto final, guíandose del ejemplo de otras aplicaciones comunes que no están relacionadas a este proyecto.
+
+
+A pesar de que el producto final de este proyecto cuenta con las aprobación del cliente, el pasante considera posibles futuras mejoras y ampliaciones que le darían a la empresa la posibilidad de hacer un producto más competitivo y atractivo a los posibles bancos y demás clientes que estén interesados en adquirir el producto. Estas ampliaciones son:
+\smallskip
+\begin{itemize}[noitemsep,nolistsep]
+	\item Agregar una pantalla adicional para mensajes guardados. Ya que a pesar de que los filtros en el buzón de mensajes son muy útiles, y cualquier mensaje abierto no borrado es un mensaje guardado, podría convertirse en un volumen incómodo y desagradable para el usuario.  
+	\item Ampliar la información mostrada en el item de mensajes en la pantalla buzón.
+	\item Agregar la habilidad de agregar archivos PDF a los mensajes, como alternativa a los mensajes Web View, para así poder mandar información como recibos de cajero y de transacciones a los mensajes y tenerlos guardados sin necesidad de poseer siempre una conexión a Internet.
+	\item A medida de que la plataforma Ionic crezca, instanciar la aplicación a Windows Phone además de Android y iOS.
+	\item A pesar de no ser necesario actualmente, se podría cambiar el guardado de mensajes actual simple agregando una base de datos, para así poder guardar eficientemente información necesaria en futuras ampliaciones. En su estado actual la aplicación no necesita una base de datos ya que solo guarda el texto de los mensajes, pero si se agregan funcionalidades adicionales podría ser necesaria.
+\end{itemize}
+\bigskip
+
+Se recomienda enormemente para la salida a producción de Notificaciones+ corregir los problemas de la plataforma Synergy Push, ya que evitaría posibles futuros conflictos dentro de la aplicación y además le quitaría carga de procesamiento que usa para corregir el defecto. También se le debe agregar a los mensajes provenientes de Synergy Push la \textit{fecha de envío}, así la aplicación no tiene que agregarles fecha que sería realmente la \textit{fecha de recibo}.
+
+
+Por último se recomienda que se realicen pruebas exhaustivas que garanticen la calidad de la aplicación, incluyendo pruebas de capacidad de carga y desempeño para ver que tan capaz es una aplicación hecha en Ionic para manejar grandes cantidades de mensajes. Además de probar la aplicación en distintos dispositivos con diferentes tamaños y versiones de sistema operativo, sobre todo en la plataforma Android.
+
+
+La experiencia de la pasantía permitió al pasante poner en práctica los conocimientos adquiridos a lo largo del periodo universitario para solventar un problema real, así como aprender nuevas herramientas y tecnologías como servicios web REST, de los cuales el pasante no sabía su existencia hasta entrar en contacto con Synergy. Aunque no se generaron servicios web si se trabajó con ellos. También se generó un crecimiento en cuando a la gestión del tiempo, gestión de los cambios en los requerimientos y estimación del tiempo que llevaría realizar alguna actividad. Adicionalmente, el pasante tuvo la oportunidad de trabajar sobre una arquitectura con muchos conceptos e innovaciones. Ionic y AngularJS son herramientas que tienen muchas aplicaciones y mucho futuro. Esta experiencia resultó muy beneficiosa para el pasante ya que no solo aumenta sus destrezas y habilidades en el ámbito laboral, sino que lo introdujo al mundo de aplicaciones y programación web y móvil, lo cual era su objetivo principal al aceptar la pasantía en Synergy.
+
+  
+Finalmente, a los futuros pasantes se les recomienda definir claramente el alcance y los requerimientos al comenzar la pasantía y mantener reuniones periódicas con el cliente o responsable del proyecto en la empresa para que el mismo apruebe lo desarrollado hasta el momento. Así mismo, se recomienda estudiar las buenas prácticas utilizadas por la empresa y tomarlas en cuenta a lo largo del desarrollo, utilizar patrones de diseño de \textit{software} en caso de ser posible y consultar la documentación de las herramientas para sacar todo el provecho posible de las mismas. Tener siempre en cuenta las buenas prácticas de programación aprendidas en la carrera universitaria; tener paciencia al tratar con una plataforma nueva, ya que es algo que un ingeniero de computación o \textit{software} va a tener que hacer durante toda su vida; ser ordenado y competente, siempre apuntando a la mejor manera de hacer las cosas. 
+
+
+

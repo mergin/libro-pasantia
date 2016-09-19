@@ -1,0 +1,15 @@
+\setcounter{page}{4}
+\begin{center}
+
+{\bfseries DESARROLLO APLICACION NOTIFICACIONES PLUS\\}
+\bigskip
+Por: \\ David Enrique Prieto Melendez\\
+\bigskip
+\bigskip
+{\bf RESUMEN} \pdfbookmark[0]{Resumen}{resumen} % Sets a PDF bookmark for the dedication
+\end{center}	
+
+El presente informe describe las actividades realizadas durante el proyecto de pasantía larga, el cual consistió en diseñar y desarrollar un prototipo funcional de la Aplicación Web de \textit{Notificaciones Plus} y un prototipo funcional de la Aplicación Móvil del mismo. Este conjunto de aplicaciones están orientadas a los clientes de bancos, que tengan un dispositivo con la capacidad de desplegar un navegador web, o un dispositivo que funcione bajo las plataformas Android e iOS. Los prototipos funcionales de \textit{Notificaciones Plus} permiten la recepción de mensajes clasificados de acuerdo a su tipo, que un banco desee mandar a sus clientes. También se permite a los clientes mandar una respuesta al banco según el tipo específico del mensaje, en caso de que el banco requiera una respuesta por parte de sus clientes para una operación.
+
+
+Para lograr el conjunto de objetivos de \textit{Notificaciones Plus} fue necesaria la implementación de la lógica de las aplicaciones para el manejo de la recepción y gestión de mensajes provenientes de la plataforma \textit{Synergy Push}. Desde el punto de vista tecnológico se hizo uso de herramientas y tecnologías como JavaScript, AngularJS, Ionic Framework, Node.js. Los resultados de esta pasantía, realizados de acuerdo a la Metodología de Synergy-GB y documentados con artefactos de desarrollo de sistemas implantados en la empresa, incluyen el diseño y desarrollo de \textit{Notificaciones Plus}, así como la integración adecuado con los servicios web y push de la plataforma \textit{Synergy Push}.
