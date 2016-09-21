@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.4)  19 SEP 2016 07:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.4)  21 SEP 2016 08:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1521,7 +1521,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./imagenes/cebolla.png (PN
 G copy)>])
-(./0_portada.tex
+(./0_portada_2.tex
 File: imagenes/cebolla.png Graphic file (type png)
  <use imagenes/cebolla.png>
 Package pdftex.def Info: imagenes/cebolla.png used on input line 6.
@@ -2600,8 +2600,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 29872 strings out of 493029
- 543754 string characters out of 6136235
+ 29873 strings out of 493029
+ 543769 string characters out of 6136235
  721286 words of memory out of 5000000
  32475 multiletter control sequences out of 15000+600000
  12462 words of font info for 48 fonts, out of 8000000 for 9000
@@ -2616,7 +2616,7 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (98 pages, 7158848 bytes).
+Output written on thesis.pdf (98 pages, 7158849 bytes).
 PDF statistics:
  1566 PDF objects out of 1728 (max. 8388607)
  1046 compressed objects within 11 object streams
